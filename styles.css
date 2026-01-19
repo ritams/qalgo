@@ -1215,6 +1215,88 @@ p {
   height: 18px;
 }
 
+.contact-email-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.copy-email-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  color: var(--color-clay);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-email-btn:hover {
+  background: var(--color-sand);
+  color: var(--color-terracotta);
+}
+
+.copy-email-btn .icon-check {
+  display: none;
+  color: var(--color-terracotta);
+}
+
+.copy-email-btn.copied .icon-copy {
+  display: none;
+}
+
+.copy-email-btn.copied .icon-check {
+  display: flex;
+}
+
+.copy-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: var(--color-espresso);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.copy-email-btn:hover .copy-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+.venue-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.map-link {
+  font-size: var(--text-sm);
+  color: var(--color-terracotta) !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-top: 4px;
+}
+
+.map-link:hover {
+  opacity: 0.8;
+}
+
+.map-link svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
 .venue-card {
   grid-column: 1 / -1;
 }

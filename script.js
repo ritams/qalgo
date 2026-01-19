@@ -91,6 +91,30 @@
     brandSub.innerHTML = [...text].map(char => `<span>${char}</span>`).join('');
   }
 
+  // ---------- Email Copy Logic ----------
+  function initEmailCopy() {
+    const copyBtns = document.querySelectorAll('.copy-email-btn');
+
+    copyBtns.forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const email = this.getAttribute('data-email');
+        const tooltip = this.querySelector('.copy-tooltip');
+
+        navigator.clipboard.writeText(email).then(() => {
+          const originalText = tooltip.textContent;
+          tooltip.textContent = 'Copied!';
+          this.classList.add('copied');
+
+          setTimeout(() => {
+            tooltip.textContent = originalText;
+            this.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    });
+  }
+
   // ---------- Initialize ----------
   document.addEventListener('DOMContentLoaded', function () {
     initBrand();
@@ -98,6 +122,7 @@
     initNavbar();
     initMobileMenu();
     initSmoothScroll();
+    initEmailCopy();
   });
 
 })();
