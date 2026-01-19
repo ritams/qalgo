@@ -514,40 +514,110 @@ p {
 }
 
 /* ---------- About Section ---------- */
-.about-content {
-  max-width: 680px;
+/* ---------- About Section ---------- */
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
 }
 
-.about-content p {
+@media (min-width: 1024px) {
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-4xl);
+    align-items: center;
+  }
+}
+
+.about-text-column p {
   font-size: var(--text-lg);
   line-height: 1.8;
-  margin-bottom: var(--space-2xl);
+  color: var(--color-coffee);
+  max-width: 600px;
 }
 
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
-  padding: var(--space-xl) 0;
-  border-top: 1px solid var(--color-sand);
-  border-bottom: 1px solid var(--color-sand);
+@media (min-width: 1024px) {
+  .about-text-column p {
+    font-size: 1.25rem;
+    /* Equivalent to text-xl but explicit */
+  }
+}
+
+.stats-card {
+  /* Row layout for mobile as requested */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: 0;
+  /* Removed padding for mobile */
+}
+
+@media (min-width: 1024px) {
+  .about-stats-column {
+    border-left: 1px solid var(--color-terracotta);
+    /* Subtle vertical divider */
+  }
+
+  .stats-card {
+    flex-direction: column;
+    padding: var(--space-lg) 0 var(--space-lg) var(--space-2xl);
+    /* Vertical padding to align with text, left padding for spacing */
+    gap: var(--space-2xl);
+    align-items: flex-start;
+    /* Align stats to the left next to the line */
+  }
 }
 
 .stat-item {
   text-align: center;
+  flex: 1;
+}
+
+@media (min-width: 1024px) {
+  .stat-item {
+    text-align: left;
+    /* Align text left on desktop */
+  }
 }
 
 .stat-number {
   font-family: var(--font-serif);
-  font-size: var(--text-3xl);
+  font-size: 1.75rem;
+  /* Smaller font for mobile row */
   font-weight: 400;
-  color: var(--color-charcoal);
+  color: var(--color-terracotta);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+@media (min-width: 768px) {
+  .stat-number {
+    font-size: 3rem;
+  }
 }
 
 .stat-label {
-  font-size: var(--text-sm);
+  font-size: 0.55rem;
+  /* Very small for mobile */
+  font-weight: 600;
   color: var(--color-clay);
-  margin-top: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .stat-label {
+    font-size: var(--text-xs);
+    letter-spacing: 0.15em;
+  }
+}
+
+.stat-divider {
+  display: none;
+  /* Removed dividers for cleaner look */
 }
 
 /* ---------- Speakers Section ---------- */
