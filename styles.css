@@ -493,6 +493,15 @@ p {
 .avatar-container {
   position: relative;
   margin-left: -12px;
+  transition: z-index 0s;
+}
+
+.avatar-container:hover {
+  z-index: 10;
+}
+
+.avatar-container a {
+  display: block;
 }
 
 .avatar-container:first-child {
@@ -505,17 +514,12 @@ p {
   border-radius: var(--radius-full);
   border: 2px solid var(--color-warm-white);
   object-fit: cover;
-  transition: transform var(--transition-base), border-color var(--transition-base);
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
+  transition: transform var(--transition-base);
+  display: block;
 }
 
-.avatar:hover {
+.avatar-container:hover .avatar {
   transform: translateY(-4px);
-  z-index: 10;
-  border-color: var(--color-warm-white);
-  /* Keep white border */
 }
 
 /* Custom Tooltip */
