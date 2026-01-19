@@ -237,10 +237,46 @@ p {
 }
 
 .navbar-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.brand-main {
   font-family: var(--font-serif);
-  font-size: var(--text-xl);
-  font-weight: 500;
+  font-size: 1.3rem;
+  font-weight: 600;
   color: var(--color-charcoal);
+  letter-spacing: -0.01em;
+}
+
+.brand-sub {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-top: 2px;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .navbar-brand {
+    line-height: 0.95;
+  }
+
+  .brand-main {
+    font-size: 1.6rem;
+  }
+
+  .brand-sub {
+    font-size: 0.75rem;
+  }
 }
 
 .navbar-nav {

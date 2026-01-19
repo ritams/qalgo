@@ -81,8 +81,24 @@
     });
   }
 
+  // ---------- Dynamic Typography ----------
+  function initDynamicTypography() {
+    const brandSub = document.querySelector('.brand-sub');
+    if (!brandSub) return;
+
+    const text = brandSub.textContent.trim();
+    brandSub.textContent = '';
+    
+    [...text].forEach(char => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      brandSub.appendChild(span);
+    });
+  }
+
   // ---------- Initialize ----------
   document.addEventListener('DOMContentLoaded', function () {
+    initDynamicTypography();
     initFadeAnimations();
     initNavbar();
     initMobileMenu();
