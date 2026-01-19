@@ -241,7 +241,6 @@ p {
   flex-direction: column;
   line-height: 1;
   text-decoration: none;
-  width: fit-content;
 }
 
 .brand-main {
@@ -257,12 +256,10 @@ p {
   font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.25em;
   color: var(--color-terracotta);
   margin-top: 2px;
   opacity: 0.9;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -276,6 +273,7 @@ p {
 
   .brand-sub {
     font-size: 0.75rem;
+    letter-spacing: 0.3em;
   }
 }
 
@@ -317,15 +315,6 @@ p {
   width: 100%;
 }
 
-.navbar-cta {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .navbar-cta {
-    display: block;
-  }
-}
 
 /* Mobile Menu Toggle */
 .menu-toggle {
