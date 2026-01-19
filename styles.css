@@ -1324,6 +1324,11 @@ p {
   color: var(--color-espresso);
 }
 
+.supported-by {
+  margin-top: var(--space-xs);
+  opacity: 0.9;
+}
+
 /* ---------- Footer ---------- */
 .footer {
   padding: var(--space-xl) 0;
