@@ -289,11 +289,15 @@ p {
 }
 
 .navbar-nav a {
-  font-size: var(--text-base);
-  font-weight: 500;
+  font-size: var(--text-xs);
+  /* Smaller font size like 'Algorithms' */
+  font-weight: 600;
   color: var(--color-coffee);
   transition: color var(--transition-fast);
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  /* Spaced out */
 }
 
 .navbar-nav a::after {
