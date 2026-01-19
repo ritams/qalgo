@@ -81,8 +81,19 @@
     });
   }
 
+  // ---------- Dynamic Brand Spacing ----------
+  function initBrand() {
+    const brandSub = document.querySelector('.brand-sub');
+    if (!brandSub) return;
+
+    const text = brandSub.textContent.trim();
+    // Wrap each character in a span to allow flex justification
+    brandSub.innerHTML = [...text].map(char => `<span>${char}</span>`).join('');
+  }
+
   // ---------- Initialize ----------
   document.addEventListener('DOMContentLoaded', function () {
+    initBrand();
     initFadeAnimations();
     initNavbar();
     initMobileMenu();
