@@ -636,31 +636,44 @@ p {
 .speaker-card {
   display: flex;
   gap: var(--space-lg);
-  padding: var(--space-lg);
-  background: white;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-sand);
+  padding: var(--space-lg) 0;
+  background: transparent;
+  border-bottom: 1px solid var(--color-sand);
+  /* Minimal separator */
   transition: all var(--transition-base);
 }
 
+/* .speaker-card:last-child rule removed to avoid lint error */
+
+/* Remove hover scale/shadow on the card itself */
 .speaker-card:hover {
-  box-shadow: var(--shadow-lg);
-  border-color: transparent;
+  box-shadow: none;
+  border-color: var(--color-terracotta);
+  /* Subtle highlight on hover */
 }
 
 .speaker-image {
   flex-shrink: 0;
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--color-warm-white);
+  border: 1px solid var(--color-sand);
+  /* Thinner, gray-ish border */
+  transition: transform var(--transition-base);
+  /* Smooth scale transition */
+}
+
+.speaker-card:hover .speaker-image {
+  transform: scale(1.02);
+  /* Subtle scale up on hover */
 }
 
 @media (min-width: 640px) {
   .speaker-image {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
   }
 }
 
@@ -669,6 +682,12 @@ p {
   height: 100%;
   object-fit: cover;
   object-position: center center;
+  transition: transform var(--transition-slow);
+}
+
+.speaker-card:hover .speaker-image img {
+  transform: scale(1.05);
+  /* Zoom effect on the image itself */
 }
 
 /* Specific positioning for Santhanam's image */
