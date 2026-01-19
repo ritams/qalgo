@@ -573,6 +573,30 @@ p {
   margin-bottom: var(--space-xs);
 }
 
+.speaker-name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.speaker-name a:hover {
+  color: var(--color-terracotta);
+}
+
+.speaker-name .link-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-left: 2px;
+  opacity: 0.4;
+  transition: opacity var(--transition-fast);
+}
+
+.speaker-name a:hover .link-icon {
+  opacity: 1;
+}
+
 .speaker-affiliation {
   font-size: var(--text-sm);
   color: var(--color-clay);
