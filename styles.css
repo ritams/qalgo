@@ -758,12 +758,14 @@ p {
 .schedule-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
 }
 
 @media (min-width: 768px) {
   .schedule-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    /* Reduced gap to bring lines closer */
   }
 }
 
@@ -771,36 +773,67 @@ p {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  padding: var(--space-xl);
-  background: white;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-sand);
+  padding-bottom: var(--space-xl);
+  /* Space for border */
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-sand);
+  /* Divider for mobile */
+  align-items: flex-start;
+  text-align: left;
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+  /* No border for last item on mobile */
+}
+
+@media (min-width: 768px) {
+  .schedule-item {
+    border-bottom: none;
+    border-right: 1px solid var(--color-sand);
+    /* Divider for desktop */
+    padding-bottom: 0;
+    padding-right: var(--space-xl);
+    /* Space for border */
+  }
+
+  .schedule-item:last-child {
+    border-right: none;
+  }
 }
 
 .schedule-icon {
-  width: 48px;
-  height: 48px;
+  width: auto;
+  height: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: var(--color-warm-white);
-  border-radius: var(--radius-md);
+  justify-content: flex-start;
+  background: transparent;
+  border-radius: 0;
   color: var(--color-terracotta);
+  margin-bottom: var(--space-sm);
 }
 
 .schedule-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  /* Slightly larger icon */
+  height: 32px;
 }
 
 .schedule-text h3 {
-  font-size: var(--text-base);
-  margin-bottom: var(--space-xs);
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-sm);
 }
 
 .schedule-text p {
-  font-size: var(--text-sm);
-  color: var(--color-clay);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-coffee);
+  line-height: 1.6;
 }
 
 /* ---------- Fees Section ---------- */
@@ -811,22 +844,39 @@ p {
   margin-bottom: var(--space-2xl);
 }
 
+.fee-card {
+  padding: var(--space-xl) 0;
+  /* Vertical padding only */
+  background: transparent;
+  border-bottom: 1px solid var(--color-sand);
+  text-align: left;
+}
+
+.fee-card:last-child {
+  border-bottom: none;
+}
+
 @media (min-width: 640px) {
   .fees-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .fee-card {
+    padding: 0;
+    padding-right: var(--space-xl);
+    border-bottom: none;
+    border-right: 1px solid var(--color-sand);
+  }
+
+  .fee-card:last-child {
+    border-right: none;
   }
 }
 
-.fee-card {
-  padding: var(--space-xl);
-  background: white;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-sand);
-  transition: border-color var(--transition-fast);
-}
-
 .fee-card:hover {
-  border-color: var(--color-terracotta);
+  /* No hover effect needed for plain list */
+  border-color: var(--color-sand);
 }
 
 .fee-category {
@@ -834,16 +884,17 @@ p {
   font-weight: 600;
   color: var(--color-clay);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: var(--space-sm);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-xs);
 }
 
 .fee-amount {
   font-family: var(--font-serif);
-  font-size: var(--text-3xl);
-  font-weight: 400;
-  color: var(--color-charcoal);
+  font-size: 2.5rem;
+  color: var(--color-terracotta);
+  line-height: 1;
 }
+
 
 .registration-area {
   max-width: 480px;
@@ -877,14 +928,34 @@ p {
 @media (min-width: 640px) {
   .contact-grid {
     grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
   }
 }
 
 .contact-card {
-  padding: var(--space-xl);
-  background: white;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-sand);
+  padding-bottom: var(--space-xl);
+  background: transparent;
+  border-bottom: 1px solid var(--color-sand);
+}
+
+.contact-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .contact-card {
+    padding-bottom: 0;
+    border-bottom: none;
+    border-right: 1px solid var(--color-sand);
+    padding-right: var(--space-2xl);
+  }
+
+  .contact-card:last-child {
+    border-right: none;
+    padding-right: 0;
+    padding-left: var(--space-2xl);
+  }
 }
 
 .contact-card-label {
@@ -898,16 +969,18 @@ p {
 
 .contact-card h3 {
   font-family: var(--font-serif);
-  font-size: var(--text-xl);
-  font-weight: 500;
+  font-size: 1.75rem;
+  /* Increased size */
+  font-weight: 400;
   color: var(--color-charcoal);
   margin-bottom: var(--space-xs);
 }
 
 .contact-card p {
-  font-size: var(--text-sm);
-  color: var(--color-clay);
+  font-size: var(--text-base);
+  color: var(--color-coffee);
   margin-bottom: var(--space-md);
+  line-height: 1.5;
 }
 
 .contact-card a {
@@ -918,6 +991,7 @@ p {
   font-weight: 500;
   color: var(--color-terracotta);
   transition: color var(--transition-fast);
+  text-decoration: none;
 }
 
 .contact-card a:hover {
@@ -925,8 +999,8 @@ p {
 }
 
 .contact-card a svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
 .venue-card {
