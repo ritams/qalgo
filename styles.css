@@ -100,6 +100,32 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ---------- Custom Scrollbar ---------- */
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-warm-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-taupe);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-warm-white);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terracotta);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-taupe) var(--color-warm-white);
+}
+
 body {
   font-family: var(--font-sans);
   font-size: var(--text-base);
