@@ -548,40 +548,32 @@ p {
   transform: translateY(-4px);
 }
 
-/* Custom Tooltip */
+/* Minimalist Name Pill */
 .avatar-name {
   position: absolute;
   bottom: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(-8px);
-  background: var(--color-espresso);
-  color: white;
-  padding: 4px 10px;
-  border-radius: var(--radius-sm);
-  font-size: 0.7rem;
-  font-weight: 500;
+  transform: translateX(-50%) translateY(8px) scale(0.9);
+  background: var(--color-warm-white);
+  color: var(--color-terracotta);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: all var(--transition-base);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 20;
-  box-shadow: var(--shadow-md);
-}
-
-/* Tooltip Arrow */
-.avatar-name::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 5px solid transparent;
-  border-top-color: var(--color-espresso);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-sand);
 }
 
 .avatar-container:hover .avatar-name {
   opacity: 1;
-  transform: translateX(-50%) translateY(-12px);
+  transform: translateX(-50%) translateY(-10px) scale(1);
 }
 
 .badges-text p {
