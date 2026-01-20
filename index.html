@@ -356,13 +356,17 @@
                             <line x1="12" y1="9" x2="12" y2="13"></line>
                             <line x1="12" y1="17" x2="12.01" y2="17"></line>
                         </svg>
-                        <span>Last day of registration: <strong>5th Feb</strong></span>
+                        <span>Last day of registration: <strong>2nd Feb</strong></span>
                     </div>
-                    <p>Please complete the fee payment first, then proceed to registration.</p>
+                    <p class="registration-note">Limited accommodation available on request — charges apply separately.
+                    </p>
                     <div class="registration-buttons">
-                        <a href="#" class="btn btn-secondary" target="_blank" rel="noopener">Pay Fee</a>
+                        <span class="btn btn-secondary btn-disabled"
+                            title="Only shortlisted candidates will be notified to pay">Pay Fee</span>
                         <a href="#" class="btn btn-primary" target="_blank" rel="noopener">Register Now</a>
                     </div>
+                    <p class="payment-note">Only shortlisted candidates will receive payment instructions to confirm
+                        participation.</p>
                 </div>
             </div>
         </section>
@@ -381,7 +385,7 @@
                         <h3>Prof. Umakant Rapol</h3>
                         <p>Department of Physics, IISER Pune</p>
                         <div class="contact-email-wrapper">
-                            <a href="mailto:umakant.rapol@iiserpune.ac.in">
+                            <a href="mailto:events@quantech.org.in">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
@@ -390,10 +394,9 @@
                                     </path>
                                     <polyline points="22,6 12,13 2,6"></polyline>
                                 </svg>
-                                umakant.rapol@iiserpune.ac.in
+                                events@quantech.org.in
                             </a>
-                            <button class="copy-email-btn" data-email="umakant.rapol@iiserpune.ac.in"
-                                title="Copy email">
+                            <button class="copy-email-btn" data-email="events@quantech.org.in" title="Copy email">
                                 <span class="icon-copy">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -448,7 +451,30 @@
                 <div class="organizers-section fade-in">
                     <p>Organized by</p>
                     <p class="organizer-names">Prof. Umakant Rapol & Prof. M. S. Santhanam</p>
-                    <p class="supported-by">Supported by IISER Pune and IISc</p>
+                    <div class="supported-by-section">
+                        <p class="supported-by-label">Supported by</p>
+                        <div class="supporter-logos">
+                            <a href="https://www.iiserpune.ac.in" target="_blank" rel="noopener" class="supporter-link">
+                                <img src="assets/images/iiser-pune-logo-color-en.svg" alt="IISER Pune"
+                                    class="supporter-logo">
+                                <span class="supporter-tooltip">IISER Pune</span>
+                            </a>
+                            <a href="https://quantech.org.in" target="_blank" rel="noopener" class="supporter-link">
+                                <img src="assets/images/I-HUB-Logo.png" alt="iHub" class="supporter-logo">
+                                <span class="supporter-tooltip">I-Hub QTF</span>
+                            </a>
+                            <a href="https://dst.gov.in/national-quantum-mission-nqm" target="_blank" rel="noopener"
+                                class="supporter-link">
+                                <img src="assets/images/logo-nqm.png" alt="NQM" class="supporter-logo">
+                                <span class="supporter-tooltip">National Quantum Mission</span>
+                            </a>
+                            <a href="https://qcinnovation.co.in" target="_blank" rel="noopener" class="supporter-link">
+                                <img src="assets/images/logo-qc.png" alt="Foundation for QC Innovation"
+                                    class="supporter-logo">
+                                <span class="supporter-tooltip">Foundation for QC Innovation</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
