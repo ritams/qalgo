@@ -1312,6 +1312,26 @@ p {
   }
 }
 
+.venue-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.venue-date {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-coffee);
+}
+
+.venue-date svg {
+  color: var(--color-terracotta);
+}
+
 .organizers-section {
   margin-top: var(--space-2xl);
   padding-top: var(--space-xl);
