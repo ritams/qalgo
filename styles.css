@@ -1026,46 +1026,64 @@ p {
 }
 
 /* ---------- Fees Section ---------- */
-.fees-grid {
+.registration-groups {
   display: grid;
   grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-3xl);
+}
+
+@media (min-width: 1024px) {
+  .registration-groups {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+  }
+}
+
+.registration-group {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-lg);
-  margin-bottom: var(--space-2xl);
+}
+
+.group-header {
+  border-bottom: 2px solid var(--color-sand);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.group-title {
+  font-size: var(--text-lg);
+  color: var(--color-espresso);
+  margin-bottom: 4px;
+}
+
+.group-criteria {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.group-criteria.shortlist {
+  color: var(--color-clay);
+}
+
+.group-criteria.fcfs {
+  color: var(--color-terracotta);
+}
+
+.fees-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
 }
 
 .fee-card {
-  padding: var(--space-xl) 0;
-  /* Vertical padding only */
-  background: transparent;
-  border-bottom: 1px solid var(--color-sand);
+  padding: 0;
   text-align: left;
-}
-
-.fee-card:last-child {
-  border-bottom: none;
-}
-
-@media (min-width: 640px) {
-  .fees-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
-  }
-
-  .fee-card {
-    padding: 0;
-    padding-right: var(--space-xl);
-    border-bottom: none;
-    border-right: 1px solid var(--color-sand);
-  }
-
-  .fee-card:last-child {
-    border-right: none;
-  }
-}
-
-.fee-card:hover {
-  /* No hover effect needed for plain list */
-  border-color: var(--color-sand);
 }
 
 .fee-category {
@@ -1079,9 +1097,25 @@ p {
 
 .fee-amount {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   color: var(--color-terracotta);
   line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .fees-list {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .fee-card {
+    border-bottom: 1px solid var(--color-sand);
+    padding-bottom: var(--space-sm);
+  }
+
+  .fee-card:last-child {
+    border-bottom: none;
+  }
 }
 
 
@@ -1133,6 +1167,14 @@ p {
   .registration-buttons {
     flex-direction: row;
   }
+}
+
+.payment-info-note {
+  font-size: var(--text-xs);
+  color: var(--color-clay);
+  margin-top: var(--space-md);
+  opacity: 0.8;
+  font-weight: 500;
 }
 
 /* ---------- Contact Section ---------- */
